@@ -1,0 +1,3 @@
+flask-restful
+flask-script
+flask-sqlalchemy
