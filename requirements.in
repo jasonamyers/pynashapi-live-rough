@@ -1,3 +1,4 @@
+flask-migrate
 flask-restful
 flask-script
 flask-sqlalchemy
