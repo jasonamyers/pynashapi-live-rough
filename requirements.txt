@@ -15,6 +15,7 @@ jinja2==2.9.6             # via flask
 markupsafe==1.0           # via jinja2
 marshmallow-jsonapi==0.15.1
 marshmallow==2.13.6       # via marshmallow-jsonapi
+psycopg2==2.7.3
 python-dateutil==2.6.1    # via aniso8601
 pytz==2017.2              # via flask-restful
 six==1.10.0               # via flask-restful, python-dateutil
