@@ -22,4 +22,17 @@ class DevelopmentConfig(Config):
         app = Config.init_app(app)
 
 
-config = {'development': DevelopmentConfig, 'default': DevelopmentConfig}
+class ProductionConfig(Config):
+    ENVIRONMENT = 'prod'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+
+    @classmethod
+    def init_app(cls, app):
+        app = Config.init_app(app)
+
+
+config = {
+    'development': DevelopmentConfig,
+    'production': ProductionConfig,
+    'default': DevelopmentConfig
+}

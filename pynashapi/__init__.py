@@ -18,4 +18,7 @@ def create_app(config_name='default'):
     def health_check():
         return jsonify({'health': 'OK'})
 
+    from pynashapi.api import API_BP
+    app.register_blueprint(API_BP)
+
     return app
