@@ -17,6 +17,7 @@ class DevelopmentConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(
         basedir, 'data-dev.sqlite')
 
+    @classmethod
     def init_app(cls, app):
         app = Config.init_app(app)
 
