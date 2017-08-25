@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+import os
+
 from flask_script import Manager, Shell, Server
 from flask_script.commands import ShowUrls, Clean
 from flask_migrate import Migrate, MigrateCommand
@@ -6,7 +8,7 @@ from flask_migrate import Migrate, MigrateCommand
 from pynashapi import create_app, DB
 from commands.db_init import DbInit, DbProp
 
-app = create_app()
+app = create_app(os.environ.get('FLASK_CONFIG') or 'default')
 
 manager = Manager(app)
 migrate = Migrate(app, DB)
